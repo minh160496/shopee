@@ -1,0 +1,911 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --shopColor: #f53e2d;
+    --subShopColor: rgba(255, 216, 64, 0.94);
+    --title-opacity: #999;
+    --text-color: #333;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+
+/* PHẦN ÁP DỤNG CHO MOBILE VÀ ÁP DỤNG CHUNG */
+
+.grid {
+    width: 100%;
+    /* Các thẻ không có tính chất khối vẫn dùng được */
+    display: block;
+    /* trường hợp các element có padding hoặc margin mặc định ví dụ thẻ ul */
+    padding: 0;
+}
+
+.grid.wide {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+.col {
+    padding: 4px;
+}
+
+.row.no-gutter {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.row.no-gutter .col {
+    padding: 0;
+}
+
+.row.s-gutter {
+    margin-right: -2px;
+    margin-left: -2px;
+}
+
+.row.s-gutter .col {
+    padding: 2px;
+}
+
+.c-0 {
+    display: none;
+}
+
+.c-1,
+.c-2,
+.c-2-4 .c-3,
+.c-4,
+.c-5,
+.c-6,
+.c-7,
+.c-8,
+.c-9,
+.c-10,
+.c-11,
+.c-12 {
+    display: block;
+}
+
+.c-1 {
+    flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+}
+
+.c-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+}
+
+.c-2-4 {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+.c-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.c-4 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+}
+
+.c-5 {
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+}
+
+.c-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.c-7 {
+    flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+}
+
+.c-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+}
+
+.c-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.c-10 {
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+}
+
+.c-11 {
+    flex: 0 0 91.66667%;
+    max-width: 91.66667%;
+}
+
+.c-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/* ofset cua calumn */
+.c-o-0 {
+    margin-left: 0;
+}
+
+.c-o-1 {
+    margin-left: 8.33333%;
+}
+
+.c-o-2 {
+    margin-left: 16.66667%;
+}
+
+.c-o-2-4 {
+    margin-left: 20%;
+}
+
+.c-o-3 {
+    margin-left: 25%;
+}
+
+.c-o-4 {
+    margin-left: 33.33333%;
+}
+
+.c-o-5 {
+    margin-left: 41.66667%;
+}
+
+.c-o-6 {
+    margin-left: 50%;
+}
+
+.c-o-7 {
+    margin-left: 58.33333%;
+}
+
+.c-o-8 {
+    margin-left: 66.66667%;
+}
+
+.c-o-9 {
+    margin-left: 75%;
+}
+
+.c-o-10 {
+    margin-left: 83.33333%;
+}
+
+.c-o-11 {
+    margin-left: 91.66667%;
+}
+
+
+.float-right {
+    float: right !important;
+}
+
+/* PHẦN ÁP DỤNG CHO THIẾT BỊ LỚN HƠN TABLET */
+
+@media (min-width: 740px) {
+    .row {
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+
+    .row.no-gutter {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .row.s-gutter {
+        margin-left: -4px;
+        margin-right: -4px;
+    }
+
+
+    .col {
+        padding: 8px;
+    }
+
+    .row.no-gutter .col {
+        padding: 0;
+    }
+
+    .row.s-gutter .col {
+        padding: 4px;
+    }
+
+    .m-0 {
+        display: none;
+    }
+
+    .m-1,
+    .m-2,
+    .m-2-4 .m-3,
+    .m-4,
+    .m-5,
+    .m-6,
+    .m-7,
+    .m-8,
+    .m-9,
+    .m-10,
+    .m-11,
+    .m-12 {
+        display: block;
+    }
+
+    .m-1 {
+        flex: 0 0 8.33333%;
+        max-width: 8.33333%;
+    }
+
+    .m-2 {
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+    }
+
+    .m-2-4 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+
+    .m-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .m-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+
+    .m-5 {
+        flex: 0 0 41.66667%;
+        max-width: 41.66667%;
+    }
+
+    .m-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .m-7 {
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+
+    .m-8 {
+        flex: 0 0 66.66667%;
+        max-width: 66.66667%;
+    }
+
+    .m-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    .m-10 {
+        flex: 0 0 83.33333%;
+        max-width: 83.33333%;
+    }
+
+    .m-11 {
+        flex: 0 0 91.66667%;
+        max-width: 91.66667%;
+    }
+
+    .m-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* ofset cua calumn */
+    .m-o-0 {
+        margin-left: 0;
+    }
+
+    .m-o-1 {
+        margin-left: 8.33333%;
+    }
+
+    .m-o-2 {
+        margin-left: 16.66667%;
+    }
+
+    .m-o-2-4 {
+        margin-left: 20%;
+    }
+
+    .m-o-3 {
+        margin-left: 25%;
+    }
+
+    .m-o-4 {
+        margin-left: 33.33333%;
+    }
+
+    .m-o-5 {
+        margin-left: 41.66667%;
+    }
+
+    .m-o-6 {
+        margin-left: 50%;
+    }
+
+    .m-o-7 {
+        margin-left: 58.33333%;
+    }
+
+    .m-o-8 {
+        margin-left: 66.66667%;
+    }
+
+    .m-o-9 {
+        margin-left: 75%;
+    }
+
+    .m-o-10 {
+        margin-left: 83.33333%;
+    }
+
+    .m-o-11 {
+        margin-left: 91.66667%;
+    }
+}
+
+/* ÁP DỤNG CHO PC CÓ ĐỘ PHÂN GIẢI TỪ 1113PX */
+
+@media (min-width: 1113px) {
+    .row {
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+
+    .row.no-gutter {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .row.s-gutter {
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+
+
+    .col {
+        padding: 12px;
+    }
+
+    .row.no-gutter .col {
+        padding: 0;
+    }
+
+    .row.s-gutter .col {
+        padding: 5px;
+    }
+
+    .l-0 {
+        display: none;
+    }
+
+    .l-1,
+    .l-2,
+    .l-2-4,
+    .l-3,
+    .l-4,
+    .l-5,
+    .l-6,
+    .l-7,
+    .l-8,
+    .l-9,
+    .l-10,
+    .l-11,
+    .l-12 {
+        display: block;
+    }
+
+    .l-1 {
+        flex: 0 0 8.33333%;
+        max-width: 8.33333%;
+    }
+
+    .l-2 {
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+    }
+
+    .l-2-4 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+
+    .l-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .l-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+
+    .l-5 {
+        flex: 0 0 41.66667%;
+        max-width: 41.66667%;
+    }
+
+    .l-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .l-7 {
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+
+    .l-8 {
+        flex: 0 0 66.66667%;
+        max-width: 66.66667%;
+    }
+
+    .l-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    .l-10 {
+        flex: 0 0 83.33333%;
+        max-width: 83.33333%;
+    }
+
+    .l-11 {
+        flex: 0 0 91.66667%;
+        max-width: 91.66667%;
+    }
+
+    .l-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* ofset cua calumn */
+    .l-o-0 {
+        margin-left: 0;
+    }
+
+    .l-o-1 {
+        margin-left: 8.33333%;
+    }
+
+    .l-o-2 {
+        margin-left: 16.66667%;
+    }
+
+    .l-o-2-4 {
+        margin-left: 20%;
+    }
+
+    .l-o-3 {
+        margin-left: 25%;
+    }
+
+    .l-o-4 {
+        margin-left: 33.33333%;
+    }
+
+    .l-o-5 {
+        margin-left: 41.66667%;
+    }
+
+    .l-o-6 {
+        margin-left: 50%;
+    }
+
+    .l-o-7 {
+        margin-left: 58.33333%;
+    }
+
+    .l-o-8 {
+        margin-left: 66.66667%;
+    }
+
+    .l-o-9 {
+        margin-left: 75%;
+    }
+
+    .l-o-10 {
+        margin-left: 83.33333%;
+    }
+
+    .l-o-11 {
+        margin-left: 91.66667%;
+    }
+}
+
+/* ÁP DỤNG CHO TABLET */
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    .wide {
+        width: 644px;
+    }
+
+    .wide .row {
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+
+    .wide .row.no-gutter {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .wide .row.s-gutter {
+        margin-left: -4px;
+        margin-right: -4px;
+    }
+
+    .wide .col {
+        padding: 8px;
+    }
+
+    .wide .row.no-gutter .col {
+        padding: 0;
+    }
+
+    .wide .row.s-gutter .col {
+        padding: 4px;
+    }
+
+
+    .wide .m-0 {
+        display: none;
+    }
+
+    .wide .m-1,
+    .wide .m-2,
+    .wide .m-2-4,
+    .wide .m-3,
+    .wide .m-4,
+    .wide .m-5,
+    .wide .m-6,
+    .wide .m-7,
+    .wide .m-8,
+    .wide .m-9,
+    .wide .m-10,
+    .wide .m-11,
+    .wide .m-12 {
+        display: block;
+    }
+
+    .wide .m-1 {
+        flex: 0 0 8.33333%;
+        max-width: 8.33333%;
+    }
+
+    .wide .m-2 {
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+    }
+
+    .wide .m-2-4 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+
+    .wide .m-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .wide .m-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+
+    .wide .m-5 {
+        flex: 0 0 41.66667%;
+        max-width: 41.66667%;
+    }
+
+    .wide .m-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .wide .m-7 {
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+
+    .wide .m-8 {
+        flex: 0 0 66.66667%;
+        max-width: 66.66667%;
+    }
+
+    .wide .m-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    .wide .m-10 {
+        flex: 0 0 83.33333%;
+        max-width: 83.33333%;
+    }
+
+    .wide .m-11 {
+        flex: 0 0 91.66667%;
+        max-width: 91.66667%;
+    }
+
+    .wide .m-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* ofset cua calumn */
+    .wide .m-o-10 {
+        margin-left: 0;
+    }
+
+    .wide .m-o-1 {
+        margin-left: 8.33333%;
+    }
+
+    .wide .m-o-2 {
+        margin-left: 16.66667%;
+    }
+
+    .wide .m-o-2-4 {
+        margin-left: 20%;
+    }
+
+
+    .wide .m-o-3 {
+        margin-left: 25%;
+    }
+
+    .wide .m-o-4 {
+        margin-left: 33.33333%;
+    }
+
+    .wide .m-o-5 {
+        margin-left: 41.66667%;
+    }
+
+    .wide .m-o-6 {
+        margin-left: 50%;
+    }
+
+    .wide .m-o-7 {
+        margin-left: 58.33333%;
+    }
+
+    .wide .m-o-8 {
+        margin-left: 66.66667%;
+    }
+
+    .wide .m-o-9 {
+        margin-left: 75%;
+    }
+
+    .wide .m-o-10 {
+        margin-left: 83.33333%;
+    }
+
+    .wide .m-o-11 {
+        margin-left: 91.66667%;
+    }
+}
+
+/* ÁP DỤNG CHO PC */
+
+@media (min-width: 1023px) and (max-width: 1239px) {
+    .wide {
+        width: 948px;
+    }
+
+    .wide .row {
+        margin-right: -12px;
+        margin-left: -12px;
+    }
+
+    .wide .row.no-gutter {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .wide .row.s-gutter {
+        margin-right: -5px;
+        margin-left: -5px;
+    }
+
+    .wide .col {
+        padding: 12px;
+    }
+
+    .wipe .row.no-gutter .col {
+        padding: 0;
+    }
+
+    .wipe .row.s-gutter .col {
+        padding: 5px;
+    }
+
+    .wide .l-0 {
+        display: none;
+    }
+
+    .wide .l-1,
+    .wide .l-2,
+    .wide .l-2-4,
+    .wide .l-3,
+    .wide .l-4,
+    .wide .l-5,
+    .wide .l-6,
+    .wide .l-7,
+    .wide .l-8,
+    .wide .l-9,
+    .wide .l-10,
+    .wide .l-11,
+    .wide .l-12 {
+        display: block;
+    }
+
+    .wide .l-1 {
+        flex: 0 0 8.33333%;
+        max-width: 8.33333%;
+    }
+
+    .wide .l-2 {
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+    }
+
+    .wide .l-2-4 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+
+    .wide .l-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .wide .l-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+
+    .wide .l-5 {
+        flex: 0 0 41.66667%;
+        max-width: 41.66667%;
+    }
+
+    .wide .l-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .wide .l-7 {
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+
+    .wide .l-8 {
+        flex: 0 0 66.66667%;
+        max-width: 66.66667%;
+    }
+
+    .wide .l-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    .wide .l-10 {
+        flex: 0 0 83.33333%;
+        max-width: 83.33333%;
+    }
+
+    .wide .l-11 {
+        flex: 0 0 91.66667%;
+        max-width: 91.66667%;
+    }
+
+    .wide .l-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* ofset cua calumn */
+    .wide .l-o-0 {
+        margin-left: 0;
+    }
+
+    .wide .l-o-1 {
+        margin-left: 8.33333%;
+    }
+
+    .wide .l-o-2 {
+        margin-left: 16.66667%;
+    }
+
+    .wide .l-o-2-4 {
+        margin-left: 20%;
+    }
+
+    .wide .l-o-3 {
+        margin-left: 25%;
+    }
+
+    .wide .l-o-4 {
+        margin-left: 33.33333%;
+    }
+
+    .wide .l-o-5 {
+        margin-left: 41.66667%;
+    }
+
+    .wide .l-o-6 {
+        margin-left: 50%;
+    }
+
+    .wide .l-o-7 {
+        margin-left: 58.33333%;
+    }
+
+    .wide .l-o-8 {
+        margin-left: 66.66667%;
+    }
+
+    .wide .l-o-9 {
+        margin-left: 75%;
+    }
+
+    .wide .l-o-10 {
+        margin-left: 83.33333%;
+    }
+
+    .wide .l-o-11 {
+        margin-left: 91.66667%;
+    }
+}
+
+
+.btn {
+    border: none;
+    font-size: 1.5rem;
+    margin-right: 12px;
+    padding: 8px 12px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.btn-click {
+    background-color: var(--shopColor);
+    color: #fff;
+}
